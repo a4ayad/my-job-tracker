@@ -6,8 +6,9 @@ const SEARCH_COUNTRY = 'us'
 
 // see we added "async" to the function
 // because we are call the dynamic "searchJobs"
-searchForm.addEventListener('submit', async function (e) {
+searchForm.addEventListener('submit', function (e) {
   e.preventDefault()
+
   getJob ()
 })
 
@@ -20,6 +21,9 @@ async function getJob() {
   // note the content we get back from that function
   // console.log(jobResults) // this is an Object, check and see
   let jobs = jobResults.results // this is an Array
+
+  // display the content of the 1st object of the array
+ console.log(jobs)
 
   // there are things on the object too
   let jobsFound = jobResults.count
@@ -46,7 +50,7 @@ function updatePage(jobs, jobsFound, jobName) {
 async function searchJobs (jobString, jobsCount = 10, country = SEARCH_COUNTRY) {
 
   // see https://gist.github.com/imdeletosh/f13c339b5f8e0a62ebe973a4ac86c3c0 for a breakdown of this
-  const url = `http://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=a7547f34&app_key=92b62ee9bfd90c11c097004b51438beb&results_per_page=${jobsCount}&what=${jobString}&content-type=application/json`
+  const url = `https://api.adzuna.com/v1/api/jobs/${country}/search/1?app_id=a7547f34&app_key=92b62ee9bfd90c11c097004b51438beb&results_per_page=${jobsCount}&what=${jobString}&content-type=application/json`
   
   // console.log(url)
 
