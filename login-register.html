@@ -5,29 +5,36 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="dist/tailwind.css">
-    <title>Form Validation</title>
+	<link rel="stylesheet" href="dist/tailwind.css">
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+	<!-- add a reference to the authentication app -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+
+    <title>Form and Validation</title>
 </head>
 <body>
 
 <form id="form" action="search-display.html">
 
-	<div class="bg-gray-400 h-screen flex justify-center items-center">
+	<div class="bg-#81ecec m-8 h-screen flex justify-center items-center">
+		<!-- <div class="bg-gray-400 h-screen flex justify-center items-center"> -->
 	
-		<div id="my-form" class="bg-blue-300 bg-opacity-80 p-10 rounded-3xl border-4">
+		<div id="my-form" class="bg-green-300 bg-opacity-80 p-20 rounded-3xl border-4">
 			
-			<div class="p-2 font-bold flex flex-col">
+			<!-- AA commented out username section  -->
+			<!-- <div class="p-2 font-bold flex flex-col">
 				<label for="username">Username</label>
-				<input type="text" id="username" name="username" class="base-input">
+				<input type="text" id="username" name="username" class="base-input"> -->
 				<!-- <small class="hidden m-5 p-1 text-red-500">❌ Please enter your username</small> -->
-					<div></div>
+					<!-- <div></div>
 					
-			</div>
+			</div> -->
 			
 			
-			<div id="my-email" class="p-2 font-bold flex flex-col">
+			<div id="email" class="p-2 font-bold flex flex-col">
 				<label for="email">Email</label>
-				<input type="text" id="email" name="email" class="base-input">
+				<input type="email" id="email" name="email" placeholder="email" class="base-input">
 				<!-- <small class="hidden m-5 p-1 text-red-500">❌ Please enter your email</small> -->
 					<div></div>
 					
@@ -36,7 +43,7 @@
 			
 			<div id="my-password-1" class="p-2 font-bold flex flex-col">
 				<label for="password">Password</label>				
-				<input type="password" id="password1" name="password1" class="base-input">
+				<input type="password" id="password1" name="password1" placeholder="password" class="base-input">
 				<!-- <small class="hidden m-5 p-1 text-red-500">❌ Please enter your Password</small> -->
 					<div></div>
 				</div>
@@ -52,7 +59,9 @@
 			    </div>
 			
 					<!-- <a href="./search-display.html"> -->
-					<button id="bttn" class="mt-4 ml-40 p-4 w-max rounded-3xl shadow-lg bg-green-500 text-white border-2
+					<!-- Code for Register Button  -->
+					<button id="bttn" onclick="Register()"
+					class="mt-4 ml-40 p-4 w-max rounded-3xl shadow-lg bg-green-500 text-white border-2
 				 border-white text-4xl text-center focus:outline-none focus:ring-0">Register</button>
 				<!-- </a> -->
 				
