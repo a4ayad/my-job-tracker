@@ -38,10 +38,37 @@ function updatePage(jobs, jobsFound, jobName) {
   <h1>${jobsFound} jobs found for 
   <strong>${jobName}</strong> in ${SEARCH_COUNTRY.toUpperCase()}</h1>
   </div>`
+
     jobs.forEach(function (job) {
+
       const div = document.createElement('div')
-      div.innerHTML = `<h4><a href="${job.redirect_url}">${job.title}</a> | 
-      ${job.location.display_name}</h4> <p>${job.description}</p>`
+
+      div.innerHTML = `
+        <div class="flex">
+          <a href="#">
+          <img src="img/1024px-Heart_empty_font_awesome.png" class="w-4 h-4" title="Add to favorite jobs">
+          </a>
+
+          <a href="#">
+          <img src="img/heart-icon-png-15.jpg" class="w-4 h-4" title="Favorite jobs">
+          </a>
+
+          <button id="bttn" onclick="Share()"
+          class="mt-1 ml-4 mr-4 p-1 w-max rounded-3xl shadow-lg bg-green-500 text-white border-2
+          border-white text-1xl text-center focus:outline-none focus:ring-0">
+          Share
+          </button>
+
+          <h4><a href="${job.redirect_url}">${job.title}</a> | 
+            ${job.location.display_name}</h4> 
+        
+        </div>
+
+        <p>${job.description}</p>
+        <br>
+
+      `
+// end of "div.innerHTML"
 
       resultSection.appendChild(div)
     })
