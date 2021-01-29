@@ -56,16 +56,16 @@ function updatePage(jobs, jobsFound, jobName) {
 
       const div = document.createElement('div')
 
+      // <a href="#">
+      // <img src="img/heart-icon-png-15.jpg" class="w-4 h-4" title="Favorite jobs">
+      // </a>
+
       div.innerHTML = `
 
       <div class="flex">
       <a href="#">
       <img src="img/1024px-Heart_empty_font_awesome.png" class="w-4 h-4" 
            title="Add to favorite jobs">
-      </a>
-
-      <a href="#">
-      <img src="img/heart-icon-png-15.jpg" class="w-4 h-4" title="Favorite jobs">
       </a>
 
           <button id="bttn" onclick="Share()"
