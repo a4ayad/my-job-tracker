@@ -4,6 +4,19 @@ const resultSection = document.querySelector('#result-section')
 
 const SEARCH_COUNTRY = 'us'
 
+firebase.auth().onAuthStateChanged((user)=> {
+  if(user){
+      
+      document.querySelector('#user')
+          .innerHTML = `${user.displayName}`
+      // console.log('User:', user)
+
+  }  else {
+      // user doesn't exit
+      window.location.href = 'index.html'
+  }
+})
+
 // see we added "async" to the function
 // because we are call the dynamic "searchJobs"
 searchForm.addEventListener('submit', function (e) {
@@ -44,18 +57,20 @@ function updatePage(jobs, jobsFound, jobName) {
       const div = document.createElement('div')
 
       div.innerHTML = `
-        <div class="flex">
-          <a href="#">
-          <img src="img/1024px-Heart_empty_font_awesome.png" class="w-4 h-4" title="Add to favorite jobs">
-          </a>
 
-          <a href="#">
-          <img src="img/heart-icon-png-15.jpg" class="w-4 h-4" title="Favorite jobs">
-          </a>
+      <div class="flex">
+      <a href="#">
+      <img src="img/1024px-Heart_empty_font_awesome.png" class="w-4 h-4" 
+           title="Add to favorite jobs">
+      </a>
+
+      <a href="#">
+      <img src="img/heart-icon-png-15.jpg" class="w-4 h-4" title="Favorite jobs">
+      </a>
 
           <button id="bttn" onclick="Share()"
-          class="mt-1 ml-4 mr-4 p-1 w-max rounded-3xl shadow-lg bg-green-500 text-white border-2
-          border-white text-1xl text-center focus:outline-none focus:ring-0">
+          class="mt-1 ml-4 mr-4 p-1 w-max rounded-3xl shadow-lg bg-green-500 text-white 
+          border-2 border-white text-1xl text-center focus:outline-none focus:ring-0">
           Share
           </button>
 
@@ -88,3 +103,36 @@ async function searchJobs (jobString, jobsCount = 10, country = SEARCH_COUNTRY) 
 
   return data
 }
+
+
+// https://codepen.io/bneupane/pen/KMKzZZ
+$(document).ready(function(){
+  $("#heart").click(function(){
+    if($("#heart").hasClass("liked")){
+      $("#heart").html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
+      $("#heart").removeClass("liked");
+    }else{
+      $("#heart").html('<i class="fa fa-heart" aria-hidden="true"></i>');
+      $("#heart").addClass("liked");
+    }
+  });
+});
+
+{/* <style>
+.fa-heart-o {
+color: red;
+cursor: pointer;
+}
+
+.fa-heart {
+color: red;
+cursor: pointer;
+}
+</style>
+  <span id = heart><i class="fa fa-heart-o" aria-hidden="true" ></i> </span> */}
+
+// https://www.w3schools.com/howto/howto_js_toggle_like.asp
+function myFunction(x) {
+  x.classList.toggle("fa-thumbs-down");
+}
+{/* <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i> */}
