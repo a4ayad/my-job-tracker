@@ -1,45 +1,69 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Login Register Form/page</title>
-		<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
-		<script src="firebase-init.js"></script>
-	
-		<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-		<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Register Form/page</title>
+	<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+	<script src="firebase-init.js"></script>
+    <link rel="stylesheet" href="./dist/tailwind.css">    
+	<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+</head>
 
-<body>
+<body width="5px" height="5px" background="./img/florian-olivo-4hbJ-eymZ1o-unsplash.jpg">
+<!-- <body> -->
+<!-- Header  -->
+<div class="flex flex-row justify-center w-screen bg-blue-400 p-5 overflow-auto items-center">
+    <nav>
+        <ul class="space-x- flex p-5">
+            <div class="p-10 hover:bg-blue-500">
+                <a href="./index.html"><img src="./img/logo-arrows.png" alt="logo-arrows"></a>
+			</div>
 
-<!-- <form id="form" action="search-display.html"> -->
+            <div class="text-5xl bg-green-500 p-10 hover:bg-blue-500">
+                <h1>JobTracker</h1>
+            </div>
 
-	<!-- <div class="bg-#81ecec m-8 h-screen flex justify-center items-center"> -->
-		<!-- <div class="bg-gray-400 h-screen flex justify-center items-center"> -->
-	
-		<!-- <div id="my-form" class="bg-green-300 bg-opacity-80 p-20 rounded-3xl border-4"> -->
-		
-					<!-- <a href="./search-display.html"> -->
-					<!-- Code for Register Button  -->
-					<!-- <button id="bttn" onclick="Register()"
-					class="mt-4 ml-40 p-4 w-max rounded-3xl shadow-lg bg-green-500 text-white border-2
-				 border-white text-4xl text-center focus:outline-none focus:ring-0">Register</button> -->
-				<!-- </a> -->
-				
-		<!-- </div>
-	</div> -->
-	
-<!-- </form> -->
+        </ul>
+    </nav>
+</div>
+<!-- End of Header  -->
 
-<h1>Welcome to the Job Tracker</h1>
+<!-- Main section  -->
+<div  class="h-screen flex flex-col justify-center items-center">
+	<div class="text-5xl font-extrabold">
+		<!-- <h1 class="text-5xl bg-green-500 p-10 hover:bg-blue-500">Welcome to the Job Tracker</h1> -->
+		<span class=" bg-clip-text text-transparent bg-gradient-to-r 
+		from-green-400 to-blue-100" style="line-height:1.4em;">
+			<strong>Choose Login/SignUp Method</strong>
+		</span>
+	</div>
 
-<h3>Login below</h3>
+	<div id="login-ui"></div>
 
-<div id="login-ui"></div>
+</div>	
 
+<!-- footer  -->
+
+<!-- Adding Social Media Buttons  -->
+<!-- Add icon library -->
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="flex justify-center w-screen bg-red-600 p-5 overflow-auto items-center">
+    <a href="#"><i id="linkedin" class="fa fa-linkedin hover:bg-blue-500"></i></a>
+    <a href="#"><i id="twitter" class="fa fa-twitter"></i></a>
+    <a href="#"><i id="facebook" class="fa fa-facebook"></i></a>
+    <a href="#"><i id="instagram" class="fa fa-instagram hover:bg-blue-500"></i></a>
+</div>
+
+<div class="text-5xl bg-clip-text text-transparent bg-gradient-to-r 
+from-green-400 to-blue-100 flex justify-center w-screen">
+    <h3>Copyright 2021</h3>
+</div>
 
 <script src="./login-app.js"></script>
 </body>
